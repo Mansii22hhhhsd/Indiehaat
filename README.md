@@ -1,13 +1,17 @@
-# Freelancer Platform - MERN Stack
+# IndieHaat - MERN Stack E-commerce Platform
 
-A basic freelancer platform built with the MERN stack (MongoDB, Express.js, React.js, Node.js).
+A comprehensive e-commerce platform built with the MERN stack (MongoDB, Express.js, React.js, Node.js) focusing on connecting artisans with buyers.
 
 ## Features
 
 - JWT Authentication (Login/Register)
-- User Profiles for Freelancers
-- Dashboard with stats
-- Profile management
+- User Roles (Buyer/Seller)
+- Product Management
+- Shopping Cart
+- Order Processing
+- Payment Integration (UPI/Net Banking)
+- User Profiles
+- Dashboard with Statistics
 
 ## Project Structure
 
@@ -40,9 +44,6 @@ A basic freelancer platform built with the MERN stack (MongoDB, Express.js, Reac
    MONGO_URI=your_mongodb_connection_string
    JWT_SECRET=your_jwt_secret_key
    ```
-   
-   Note: Replace `your_mongodb_connection_string` with your MongoDB connection string 
-   and `your_jwt_secret_key` with a secure random string.
 
 4. Start the backend server:
    ```
@@ -71,12 +72,36 @@ A basic freelancer platform built with the MERN stack (MongoDB, Express.js, Reac
 ## API Endpoints
 
 ### Authentication
-- `POST /api/auth/register` - Register a new user
-- `POST /api/auth/login` - Login and get token
-- `GET /api/auth/user` - Get authenticated user details
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/auth/register` | Register a new user |
+| POST | `/api/auth/login` | Login and get token |
+| GET | `/api/auth/user` | Get authenticated user details |
 
 ### Profile
-- `GET /api/profile/me` - Get current user's profile
-- `PUT /api/profile` - Update user profile
-- `GET /api/profile` - Get all profiles
-- `GET /api/profile/:user_id` - Get profile by user ID
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/profile/me` | Get current user's profile |
+| PUT | `/api/profile` | Update user profile |
+| GET | `/api/profile` | Get all profiles |
+| GET | `/api/profile/:user_id` | Get profile by user ID |
+
+### Products
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/api/products` | Get all products |
+| POST | `/api/products` | Create a new product |
+| GET | `/api/products/:id` | Get product by ID |
+| PUT | `/api/products/:id` | Update product |
+| DELETE | `/api/products/:id` | Delete product |
+
+### Orders
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/orders` | Create new order |
+| GET | `/api/orders` | Get user's orders |
+| GET | `/api/orders/:id` | Get order by ID |
